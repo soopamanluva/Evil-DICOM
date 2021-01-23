@@ -41,9 +41,9 @@ namespace EvilDICOM.CV.IO
             switch (matrix.BytesAllocated)
             {
                 case 1: valueConverter = (br) => (int)br.ReadByte(); break;
-                case 2: valueConverter = (br) => br.ReadInt16(); break;
-                case 4: valueConverter = (br) => br.ReadInt32(); break;
-                case 8: valueConverter = (br) => br.ReadInt64(); break;
+                case 2: valueConverter = (br) => br.ReadUInt16(); break;
+                case 4: valueConverter = (br) => br.ReadUInt32(); break;
+                case 8: valueConverter = (br) => br.ReadUInt64(); break;
             }
 
             var m = dcm.GetSelector().DoseGridScaling.Data;
